@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Insurance Policy  -->
+
+    <record id="view_form_hr_insurance_policy" model="ir.ui.view">
+        <field name="name">hr.insurance.policy.form</field>
+        <field name="model">hr.insurance.policy</field>
+        <field name="arch" type="xml">
+            <form string=" Insurance Policy">
+                <sheet>
+                    <group col="4">
+                        <field name="partner_id" required="1" />
+                        <field name="ref_num"/>
+                    </group>
+                    <group col="4">
+                        <field name="start_date" required="1" />
+                        <field name="vendor_num" required="1" />
+                          
+                    </group>
+                    <group col="4">
+                    <field name="end_date" required="1" />
+                    
+                        
+                        
+                        <field name="insurance_status"/>
+                    </group>
+                    <notebook>
+								<page name="public" string="Classes">
+                    <field name="class_id"/>
+                                    </page>
+                    </notebook>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_hr_insurance_policy" model="ir.ui.view">
+        <field name="name">hr.insurance.policy.tree</field>
+        <field name="model">hr.insurance.policy</field>
+        <field name="arch" type="xml">
+            <tree name="Insurance Policy ">
+                <field name="partner_id"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="ref_num"/>
+                        <field name="vendor_num"/>
+                        <field name="insurance_status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_hr_insurance_policy" model="ir.actions.act_window">
+        <field name="name">Insurance Policy </field>
+        <field name="res_model">hr.insurance.policy</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Add new Insurance Policy </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_hr_insurance_policy" string="Insurance Policy " action="action_hr_insurance_policy"
+              sequence="30" parent="hr.menu_human_resources_configuration"/>
+
+<!-- dependent -->
+
+    <record id="view_form_hr_insurance_dependent" model="ir.ui.view">
+        <field name="name">hr.dependent.form</field>
+        <field name="model">hr.dependent</field>
+        <field name="arch" type="xml">
+            <form string="Insurance dependent">
+                <sheet>
+                    
+                        <group>
+                            <field name="name"/>
+                            <field name="relation"/>
+                            <field name="birth_date"/>
+                            <field name="policy_no"/>
+                            <field name="class_id"/>
+                            <field name="insurance_member_id"/>
+                            <field name="iqama_id"/>
+                            <field name="iqama_date"/>
+                            <field name="passport_id"/>
+                            <field name="passport_date"/>
+                        </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_hr_insurance_dependent" model="ir.ui.view">
+        <field name="name">hr.dependent.tree</field>
+        <field name="model">hr.dependent</field>
+        <field name="arch" type="xml">
+            <tree name=" Insurance dependent">
+                <field name="name"/>
+                <field name="relation"/>
+                <field name="birth_date"/>
+                <field name="policy_no"/>
+                <field name="class_id"/>
+                <field name="insurance_member_id"/>
+                <field name="iqama_id"/>
+                <field name="iqama_date"/>
+                <field name="passport_id"/>
+                <field name="passport_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_hr_insurance_dependent" model="ir.actions.act_window">
+        <field name="name"> Insurance dependent</field>
+        <field name="res_model">hr.dependent</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create"> Add new insurance dependent </p>
+        </field>
+    </record>
+
+     <menuitem id="menu_hr_insurance_dependent" string=" Insurance dependent" action="action_hr_insurance_dependent"
+              sequence="31" parent="hr.menu_human_resources_configuration"/> 
+
+<!-- classes -->
+
+    <record id="view_form_hr_insurance_class" model="ir.ui.view">
+        <field name="name">hr.insurance.class.form</field>
+        <field name="model">hr.insurance.class</field>
+        <field name="arch" type="xml">
+            <form string="Class">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="status"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_hr_insurance_class" model="ir.ui.view">
+        <field name="name">hr.insurance.class.tree</field>
+        <field name="model">hr.insurance.class</field>
+        <field name="arch" type="xml">
+            <tree name="Class">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_hr_insurance_class" model="ir.actions.act_window">
+        <field name="name">Class</field>
+        <field name="res_model">hr.insurance.class</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create"> Add new Class </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_hr_insurance_class" name="Classes" action="action_hr_insurance_class"
+              sequence="32" parent="hr_base.hr_root_employee_configuration"/>
+              
+</odoo>
